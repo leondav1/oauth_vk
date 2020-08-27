@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Друзья
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-2">Пользователь: {{ user }}</h1>
+    <hr class="mt-0 mb-4">
+    <p>Список друзей</p>
+    <ul>
+    {% for friend in friends_list %}
+        <li>{{ friend }}</li>
+    {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="value" value="exit" class="button">Выход</button>
+        <button type="submit" name="value" value="unregister" class="button">Удалить данные регистрации</button>
+    </form>
+{% endblock %}
+

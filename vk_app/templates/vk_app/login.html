@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Авторизация
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <center><button id="auth_button" type="submit" class="button">Авторизоваться</button></center>
+</form>
+{% endblock %}
